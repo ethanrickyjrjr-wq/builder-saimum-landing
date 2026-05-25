@@ -1,0 +1,36 @@
+{
+  "source": "SBA 7(a)/504 franchise loan outcomes — Lee & Collier counties, FL (sba_loans_franchise_outcomes materialized view)",
+  "brain": "franchise-outcomes",
+  "api": "https://www.swfldatagulf.com/api/b/franchise-outcomes?view=speak&tier=3",
+  "fetched_at": "2026-05-25",
+  "freshness_token": "SWFL-7421-v26-20260518",
+  "scope": "SBA 7(a)/504 franchise loans across Lee + Collier counties, FL. survival_rate = paid_in_full / (paid_in_full + charged_off); resolved-loan ratio only. Still-active loans are not counted in survival rate. Small-sample rates are directional, not definitive.",
+  "totals": {
+    "brand_count": 15,
+    "brand_count_assessable": 14,
+    "brand_count_unassessable": 1,
+    "resolved_loans_total": 169,
+    "charged_off_loans_total": 37,
+    "overall_survival_rate_pct": 78.1,
+    "median_brand_survival_rate_pct": 76.25,
+    "total_gross_approval_usd": 68400000,
+    "total_gross_approval_assessable_usd": 68120000
+  },
+  "rows": [
+    { "franchise_name": "Great Clips",            "resolved_loans": 16, "charged_off": 1,  "survival_rate_pct": 93.8 },
+    { "franchise_name": "Jersey Mike's Subs",     "resolved_loans": 12, "charged_off": 1,  "survival_rate_pct": 91.7 },
+    { "franchise_name": "Servpro",                "resolved_loans": 10, "charged_off": 1,  "survival_rate_pct": 90.0 },
+    { "franchise_name": "The UPS Store",          "resolved_loans": 19, "charged_off": 2,  "survival_rate_pct": 89.5 },
+    { "franchise_name": "Wingstop",               "resolved_loans": 11, "charged_off": 2,  "survival_rate_pct": 81.8 },
+    { "franchise_name": "Pure Barre",             "resolved_loans": 5,  "charged_off": 1,  "survival_rate_pct": 80.0 },
+    { "franchise_name": "Subway",                 "resolved_loans": 40, "charged_off": 9,  "survival_rate_pct": 77.5 },
+    { "franchise_name": "Dunkin'",                "resolved_loans": 16, "charged_off": 4,  "survival_rate_pct": 75.0 },
+    { "franchise_name": "Tropical Smoothie Cafe", "resolved_loans": 11, "charged_off": 3,  "survival_rate_pct": 72.7 },
+    { "franchise_name": "Anytime Fitness",        "resolved_loans": 14, "charged_off": 5,  "survival_rate_pct": 64.3 },
+    { "franchise_name": "Marco's Pizza",          "resolved_loans": 8,  "charged_off": 3,  "survival_rate_pct": 62.5 },
+    { "franchise_name": "Snap Fitness",           "resolved_loans": 3,  "charged_off": 2,  "survival_rate_pct": 33.3 },
+    { "franchise_name": "Edible Arrangements",    "resolved_loans": 3,  "charged_off": 2,  "survival_rate_pct": 33.3 },
+    { "franchise_name": "Cold Stone Creamery",    "resolved_loans": 1,  "charged_off": 1,  "survival_rate_pct": 0.0  },
+    { "franchise_name": "Mathnasium",             "resolved_loans": 0,  "charged_off": 0,  "survival_rate_pct": null }
+  ]
+}
