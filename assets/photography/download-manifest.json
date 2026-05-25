@@ -1,0 +1,146 @@
+[
+  {
+    "url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/153000/153006/iss069e039255_lrg.jpg",
+    "folder": "scene1-hero-aerials",
+    "name": "01-nasa-iss069-florida-from-orbit-5568x3712.jpg",
+    "note": "NASA ISS Expedition 69 — Florida from the International Space Station. Public domain. The single best candidate for the Scene 1 hero base layer: dark blue Gulf, peninsular outline, real photograph from orbit.",
+    "size": 3400224,
+    "status": "ok"
+  },
+  {
+    "url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/3000/3985/aqua_florida_20nov03_250m.jpg",
+    "folder": "scene1-hero-aerials",
+    "name": "02-nasa-aqua-florida-peninsula-4000x4000.jpg",
+    "note": "NASA Aqua satellite — full Florida peninsula at 250m/pixel. Public domain. Use for the wider \"zoom out\" beat of Scene 1, or as a stylized base for the data-river map in Scene 2.",
+    "size": 4216536,
+    "status": "ok"
+  },
+  {
+    "url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/4000/4745/tampa_etm_2000306_lrg.jpg",
+    "folder": "scene1-hero-aerials",
+    "name": "03-nasa-landsat-tampa-gulf-2196x2196.jpg",
+    "note": "NASA Landsat 7 ETM+ — Tampa Bay + Gulf coast (the next zone north of SWFL). Public domain. Crop to SWFL portion for an alt hero candidate; coastline detail is sharper than the ISS shot.",
+    "size": 3920104,
+    "status": "ok"
+  },
+  {
+    "url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/84000/84737/iss041e074232_lrg.jpg",
+    "folder": "scene1-hero-aerials",
+    "name": "04-nasa-iss041-florida-coast-2128x1416.jpg",
+    "note": "NASA ISS Expedition 41 — Florida coast from orbit, different lighting/angle than [01]. Public domain. Alt hero candidate or transition frame.",
+    "size": 2434454,
+    "status": "ok"
+  },
+  {
+    "url": "http://modis.gsfc.nasa.gov/gallery/images/image01082020_1km.jpg",
+    "folder": "scene1-hero-aerials",
+    "name": "05-nasa-modis-florida-1956x1372.jpg",
+    "note": "NASA MODIS — Florida from low-orbit. Public domain. Wider context shot; useful as a Scene 2 \"data river flowing outward from the coast\" base if you flatten and recolor.",
+    "status": "fail",
+    "error": "Protocol \"http:\" not supported. Expected \"https:\""
+  },
+  {
+    "url": "https://earthathome.org/wp-content/uploads/2021/11/Florida-Platform-2000px.jpg",
+    "folder": "scene1-hero-aerials",
+    "name": "06-florida-platform-bathymetry-2000x1125.jpg",
+    "note": "Florida Platform bathymetric map (Earth@Home, university-edu source). Shows the carbonate shelf SWFL sits on — perfect reference for the \"stylized 3D topographic map\" call in the script. Likely free for educational use; verify license before publishing.",
+    "size": 175053,
+    "status": "ok"
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Cape_Coral%2C_Florida.jpg",
+    "folder": "scene1-swfl-locations",
+    "name": "07-wikimedia-cape-coral-canals-2816x2112.jpg",
+    "note": "Cape Coral canal network aerial. Wikimedia Commons (Creative Commons — attribution required). Directly maps to Scene 1 callout \"SBA loan cluster in Cape Coral\" — the canal grid IS the visual signature of Cape Coral. High-res, real photo.",
+    "status": "fail",
+    "error": "HTTP 429 for https://upload.wikimedia.org/wikipedia/commons/2/25/Cape_Coral%2C_Florida.jpg"
+  },
+  {
+    "url": "https://prodrones.com/wp-content/uploads/2024/07/DJI_0813-HDR-scaled.jpg.webp",
+    "folder": "scene1-swfl-locations",
+    "name": "08-prodrones-fort-myers-beach-dji-2560x1706.webp",
+    "note": "Fort Myers Beach DJI drone HDR shot (prodrones.com). Editorial-quality, no obvious watermark in the file, but the rights are with prodrones — license check required before use. High-res FMB aerial, post-Ian rebuild era.",
+    "size": 746836,
+    "status": "ok"
+  },
+  {
+    "url": "https://www.naplesnews.com/gcdn/authoring/authoring-images/2025/01/24/PNDN/77936111007-20240321-tcg-5th-ave-15.jpg",
+    "folder": "scene6-downtown",
+    "name": "09-naples-news-5th-ave-south-5472x3648.jpg",
+    "note": "Naples 5th Avenue South — Naples Daily News editorial. 5472x3648, very high res. Editorial license required — Naples News for any public use. Pristine reference for the Scene 6 \"downtown Naples + Fort Myers skyline\" column.",
+    "size": 4587425,
+    "status": "ok"
+  },
+  {
+    "url": "https://bloximages.chicago2.vip.townnews.com/gulfshorebusiness.com/content/tncms/assets/v3/editorial/d/e2/de2e52d8-d251-4549-a567-8dc873764b56/6973c48140f95.image.jpg",
+    "folder": "scene6-downtown",
+    "name": "10-gulfshore-business-naples-1024x576.jpg",
+    "note": "Naples downtown from Gulfshore Business — editorial. Lower res than [09]. Use as a secondary if [09] cant be licensed.",
+    "size": 190422,
+    "status": "ok"
+  },
+  {
+    "url": "https://svs.gsfc.nasa.gov/vis/a030000/a030200/a030287/phytoplankton_gulf_of_mexico_2009314.png",
+    "folder": "scene7-water-texture",
+    "name": "11-nasa-gulf-of-mexico-phytoplankton-4104x2304.png",
+    "note": "NASA Goddard SVS — Gulf of Mexico phytoplankton bloom (false-color). Public domain. The swirl pattern reads abstract/dark and would work as a Scene 7 footer water texture if you desaturate to gulf-midnight (#0A1419). 4104x2304 PNG.",
+    "size": 9440922,
+    "status": "ok"
+  },
+  {
+    "url": "https://c8.alamy.com/comp/ABKTP9/aerial-photo-of-fort-myers-beach-west-coast-gulf-of-mexico-florida-ABKTP9.jpg",
+    "folder": "reference-stock-watermarked",
+    "name": "alamy-fort-myers-beach-aerial-comp-1300x956.jpg",
+    "note": "Alamy stock comp — Fort Myers Beach aerial. Watermarked, REFERENCE ONLY. License via Alamy before use.",
+    "size": 258299,
+    "status": "ok"
+  },
+  {
+    "url": "https://c8.alamy.com/comp/2HP9GFB/aerial-plane-or-drone-view-of-ft-myers-beach-landscape-near-sanibel-island-in-southwest-in-florida-saharan-with-beautiful-green-water-and-estero-bay-a-2HP9GFB.jpg",
+    "folder": "reference-stock-watermarked",
+    "name": "alamy-fmb-sanibel-estero-bay-comp-1300x956.jpg",
+    "note": "Alamy stock comp — FMB + Sanibel + Estero Bay context shot. The single best location-bundle frame in the search results. Watermarked, REFERENCE ONLY.",
+    "size": 129890,
+    "status": "ok"
+  },
+  {
+    "url": "https://c8.alamy.com/comp/2Y4K3MY/aerial-view-of-marco-island-florida-usa-2Y4K3MY.jpg",
+    "folder": "reference-stock-watermarked",
+    "name": "alamy-marco-island-aerial-comp-1300x956.jpg",
+    "note": "Alamy stock comp — Marco Island aerial. Watermarked, REFERENCE ONLY.",
+    "size": 184501,
+    "status": "ok"
+  },
+  {
+    "url": "https://c8.alamy.com/comp/ABKTW8/aerial-photo-of-sanibel-island-san-carlos-bay-tarpon-bay-gulf-of-mexico-ABKTW8.jpg",
+    "folder": "reference-stock-watermarked",
+    "name": "alamy-sanibel-san-carlos-bay-comp-1300x956.jpg",
+    "note": "Alamy stock comp — Sanibel + San Carlos Bay + Tarpon Bay. Watermarked, REFERENCE ONLY.",
+    "size": 104734,
+    "status": "ok"
+  },
+  {
+    "url": "https://c8.alamy.com/comp/2YX6NAM/florida-aerial-view-of-sanibel-and-captiva-islands-sanibel-on-the-left-2YX6NAM.jpg",
+    "folder": "reference-stock-watermarked",
+    "name": "alamy-sanibel-captiva-pair-comp-1300x956.jpg",
+    "note": "Alamy stock comp — Sanibel + Captiva pair from above. Watermarked, REFERENCE ONLY.",
+    "size": 63329,
+    "status": "ok"
+  },
+  {
+    "url": "https://c8.alamy.com/comp/A553PY/estero-bay-florida-A553PY.jpg",
+    "folder": "reference-stock-watermarked",
+    "name": "alamy-estero-bay-comp-1300x952.jpg",
+    "note": "Alamy stock comp — Estero Bay direct. Watermarked, REFERENCE ONLY. Maps to the Scene 1 \"Storm surge risk rings around Estero Bay\" callout.",
+    "size": 159963,
+    "status": "ok"
+  },
+  {
+    "url": "https://c8.alamy.com/comp/2M9H51Y/aerial-view-of-sun-setting-over-fort-myers-beach-fort-myers-florida-usa-2M9H51Y.jpg",
+    "folder": "reference-stock-watermarked",
+    "name": "alamy-fmb-sunset-comp-1300x843.jpg",
+    "note": "Alamy stock comp — FMB at sunset. Watermarked, REFERENCE ONLY. Good mood reference for the dark/atmospheric tone the script calls for.",
+    "size": 204159,
+    "status": "ok"
+  }
+]
