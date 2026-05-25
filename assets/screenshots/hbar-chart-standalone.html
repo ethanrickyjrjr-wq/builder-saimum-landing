@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Asking Rent Chart</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --bg: #0f1923;
+                --surface: #162030;
+                --border: rgba(255, 255, 255, 0.07);
+                --teal: #3ecfb2;
+                --teal-dim: rgba(62, 207, 178, 0.18);
+                --teal-glow: rgba(62, 207, 178, 0.45);
+                --amber: #e8a84c;
+                --amber-dim: rgba(232, 168, 76, 0.18);
+                --amber-glow: rgba(232, 168, 76, 0.45);
+                --neutral: #3ecfb2; /* same teal for neutral per image */
+                --muted-txt: rgba(255, 255, 255, 0.38);
+                --label-txt: rgba(255, 255, 255, 0.88);
+                --value-txt: rgba(255, 255, 255, 0.95);
+                --meta-txt: rgba(62, 207, 178, 0.6);
+            }
+
+            body {
+                background: var(--bg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                font-family: "IBM Plex Sans", sans-serif;
+                padding: 24px;
+            }
+
+            .card {
+                background: var(--surface);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 28px 32px 22px;
+                width: 100%;
+                max-width: 620px;
+                min-width: 320px;
+            }
+
+            .card-eyebrow {
+                font-family: "IBM Plex Mono", monospace;
+                font-size: 11px;
+                letter-spacing: 0.12em;
+                color: var(--muted-txt);
+                text-transform: uppercase;
+                margin-bottom: 6px;
+            }
+
+            .card-title {
+                font-size: 20px;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: 24px;
+                letter-spacing: -0.01em;
+            }
+
+            .bar-list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .bar-row {
+                display: grid;
+                grid-template-columns: 148px 1fr 76px;
+                align-items: center;
+                gap: 12px;
+                cursor: pointer;
+                padding: 5px 0;
+                border-radius: 4px;
+                transition: opacity 0.2s;
+            }
+
+            .bar-label {
+                font-size: 13.5px;
+                font-weight: 600;
+                color: var(--label-txt);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                letter-spacing: -0.01em;
+                transition: color 0.2s;
+            }
+
+            .bar-track {
+                position: relative;
+                height: 24px;
+                background: rgba(255, 255, 255, 0.04);
+                border-radius: 3px;
+                overflow: hidden;
+            }
+
+            .bar-fill {
+                position: absolute;
+                inset: 0 auto 0 0;
+                width: 0%; /* animated via JS */
+                border-radius: 3px;
+                transition:
+                    filter 0.25s,
+                    opacity 0.25s;
+            }
+
+            .bar-fill.bullish {
+                background: var(--teal);
+                box-shadow: 0 0 10px var(--teal-glow);
+            }
+            .bar-fill.neutral {
+                background: rgba(62, 207, 178, 0.55);
+                box-shadow: none;
+            }
+            .bar-fill.bearish {
+                background: var(--amber);
+                box-shadow: 0 0 10px var(--amber-glow);
+            }
+
+            .bar-value {
+                font-family: "IBM Plex Mono", monospace;
+                font-size: 13.5px;
+                font-weight: 600;
+                color: var(--value-txt);
+                text-align: right;
+                letter-spacing: 0.01em;
+                white-space: nowrap;
+            }
+
+            /* Hover state */
+            .bar-list.has-hover .bar-row {
+                opacity: 0.35;
+            }
+            .bar-list.has-hover .bar-row.hovered {
+                opacity: 1;
+            }
+            .bar-list.has-hover .bar-row.hovered .bar-fill {
+                filter: brightness(1.25);
+            }
+
+            /* Tooltip */
+            .tooltip {
+                position: fixed;
+                background: #1c2e3f;
+                border: 1px solid rgba(62, 207, 178, 0.3);
+                border-radius: 8px;
+                padding: 10px 14px;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.15s;
+                z-index: 100;
+                min-width: 180px;
+            }
+            .tooltip.visible {
+                opacity: 1;
+            }
+            .tooltip-name {
+                font-size: 12px;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: 4px;
+            }
+            .tooltip-row {
+                display: flex;
+                justify-content: space-between;
+                font-family: "IBM Plex Mono", monospace;
+                font-size: 11px;
+                color: var(--muted-txt);
+            }
+            .tooltip-row span:last-child {
+                color: var(--teal);
+            }
+
+            /* Footer */
+            .card-footer {
+                margin-top: 18px;
+                padding-top: 14px;
+                border-top: 1px dashed rgba(255, 255, 255, 0.1);
+                font-family: "IBM Plex Mono", monospace;
+                font-size: 11.5px;
+                color: var(--meta-txt);
+                letter-spacing: 0.02em;
+            }
+
+            /* Click ripple */
+            @keyframes ripple {
+                from {
+                    transform: scaleX(1);
+                    opacity: 0.5;
+                }
+                to {
+                    transform: scaleX(1.03);
+                    opacity: 0;
+                }
+            }
+            .bar-fill.ripple {
+                animation: ripple 0.4s ease-out;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card" id="chart"></div>
+        <div class="tooltip" id="tooltip">
+            <div class="tooltip-name" id="tt-name"></div>
+            <div class="tooltip-row">
+                <span>Asking Rent</span><span id="tt-val"></span>
+            </div>
+            <div class="tooltip-row">
+                <span>Tier</span><span id="tt-tier"></span>
+            </div>
+            <div class="tooltip-row">
+                <span>vs Median</span><span id="tt-vs"></span>
+            </div>
+        </div>
+
+        <script>
+            // ─── DATA ────────────────────────────────────────────────────────────────────
+            const DATA = {
+                title: "Asking rent (NNN, $/sqft)",
+                corridors: [
+                    { name: "Fort Myers Beach", value: 45.0, tier: "bullish" },
+                    { name: "North Naples", value: 42.5, tier: "bullish" },
+                    { name: "Pine Ridge Rd", value: 38.0, tier: "neutral" },
+                    { name: "Cape Coral Pkwy", value: 32.5, tier: "neutral" },
+                    { name: "Estero (anchor)", value: 28.0, tier: "neutral" },
+                    { name: "Bonita Springs", value: 26.5, tier: "neutral" },
+                    { name: "Alico Industrial", value: 16.5, tier: "bearish" },
+                ],
+                median: 32.5,
+                range: { min: 16.5, max: 45.0 },
+            };
+
+            // ─── BUILD ───────────────────────────────────────────────────────────────────
+            const card = document.getElementById("chart");
+            const tooltip = document.getElementById("tooltip");
+            const ttName = document.getElementById("tt-name");
+            const ttVal = document.getElementById("tt-val");
+            const ttTier = document.getElementById("tt-tier");
+            const ttVs = document.getElementById("tt-vs");
+
+            card.innerHTML = `
+  <div class="card-eyebrow">${DATA.corridors.length} corridors</div>
+  <div class="card-title">${DATA.title}</div>
+  <div class="bar-list" id="bar-list"></div>
+  <div class="card-footer">
+    Median $${DATA.median.toFixed(2)} &nbsp;·&nbsp; range $${DATA.range.min.toFixed(2)}–$${DATA.range.max.toFixed(2)}
+  </div>
+`;
+
+            const list = document.getElementById("bar-list");
+            const fills = [];
+
+            DATA.corridors.forEach((corridor, i) => {
+                const pct = (corridor.value / DATA.range.max) * 100;
+
+                const row = document.createElement("div");
+                row.className = "bar-row";
+                row.dataset.index = i;
+                row.innerHTML = `
+    <div class="bar-label">${corridor.name}</div>
+    <div class="bar-track">
+      <div class="bar-fill ${corridor.tier}" data-pct="${pct.toFixed(2)}" data-index="${i}"></div>
+    </div>
+    <div class="bar-value" id="val-${i}">$0.00</div>
+  `;
+                list.appendChild(row);
+                fills.push(row.querySelector(".bar-fill"));
+            });
+
+            // ─── ANIMATE IN ──────────────────────────────────────────────────────────────
+            function easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
+            }
+
+            function animateBar(fill, targetPct, valueEl, targetVal, delay) {
+                const duration = 750;
+                let start = null;
+
+                setTimeout(() => {
+                    function step(ts) {
+                        if (!start) start = ts;
+                        const elapsed = ts - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = easeOutCubic(progress);
+
+                        fill.style.width = eased * targetPct + "%";
+                        valueEl.textContent =
+                            "$" + (eased * targetVal).toFixed(2);
+
+                        if (progress < 1) requestAnimationFrame(step);
+                        else fill.style.width = targetPct + "%";
+                    }
+                    requestAnimationFrame(step);
+                }, delay);
+            }
+
+            DATA.corridors.forEach((corridor, i) => {
+                const fill = fills[i];
+                const pct = parseFloat(fill.dataset.pct);
+                const valEl = document.getElementById(`val-${i}`);
+                animateBar(fill, pct, valEl, corridor.value, i * 110);
+            });
+
+            // ─── HOVER ───────────────────────────────────────────────────────────────────
+            list.addEventListener("mouseover", (e) => {
+                const row = e.target.closest(".bar-row");
+                if (!row) return;
+
+                list.classList.add("has-hover");
+                list.querySelectorAll(".bar-row").forEach((r) =>
+                    r.classList.remove("hovered"),
+                );
+                row.classList.add("hovered");
+
+                const idx = parseInt(row.dataset.index);
+                const c = DATA.corridors[idx];
+                const diff = c.value - DATA.median;
+                const sign = diff >= 0 ? "+" : "";
+
+                ttName.textContent = c.name;
+                ttVal.textContent = `$${c.value.toFixed(2)}/sqft`;
+                ttTier.textContent =
+                    c.tier.charAt(0).toUpperCase() + c.tier.slice(1);
+                ttVs.textContent = `${sign}$${Math.abs(diff).toFixed(2)}`;
+                tooltip.classList.add("visible");
+            });
+
+            list.addEventListener("mousemove", (e) => {
+                tooltip.style.left = e.clientX + 14 + "px";
+                tooltip.style.top = e.clientY - 48 + "px";
+            });
+
+            list.addEventListener("mouseleave", () => {
+                list.classList.remove("has-hover");
+                list.querySelectorAll(".bar-row").forEach((r) =>
+                    r.classList.remove("hovered"),
+                );
+                tooltip.classList.remove("visible");
+            });
+
+            // ─── CLICK ───────────────────────────────────────────────────────────────────
+            list.addEventListener("click", (e) => {
+                const row = e.target.closest(".bar-row");
+                if (!row) return;
+                const fill = row.querySelector(".bar-fill");
+                fill.classList.remove("ripple");
+                void fill.offsetWidth; // reflow to restart animation
+                fill.classList.add("ripple");
+                fill.addEventListener(
+                    "animationend",
+                    () => fill.classList.remove("ripple"),
+                    { once: true },
+                );
+            });
+        </script>
+    </body>
+</html>
