@@ -1,0 +1,28 @@
+corridor_id,corridor_name,city,county,corridor_type,seasonal_index,cap_rate_pct,vacancy_rate_pct,absorption_sqft,asking_rent_psf_nnn,metrics_period
+naples-airport-pulling-south-naples,Naples Airport-Pulling (South),Naples,Collier,industrial-flex,1,6.7,1.8,,60.84,2026-Q1
+us-41-tamiami-trail-naples-naples,US-41 Tamiami Trail Naples,Naples,Collier,highway-strip-mall,0.5,6.7,1.8,6200,60.84,2026-Q1
+waterside-shops-naples,Waterside Shops,Naples,Collier,beachfront-tourism,1,6.7,1.8,,60.84,2026-Q1
+5th-ave-south-3rd-street-south-naples,5th Ave South / 3rd Street South,Naples,Collier,mixed-use-downtown,0.6,6.7,1.8,1500,60.84,2026-Q1
+pine-ridge-rd-naples-naples,Pine Ridge Rd Naples,Naples,Collier,highway-strip-mall,0.35,8.3,3.2,21736,39.2,2026-Q1
+gulf-coast-town-center-fort-myers,Gulf Coast Town Center,Fort Myers,Lee,anchor-dependent,1,6.7,7.7,,34.24,2026-Q1
+ben-hill-griffin-pkwy-estero,Ben Hill Griffin Pkwy,Estero,Lee,anchor-dependent,0.55,6.7,7.7,4200,34.24,2026-Q1
+coconut-point-mall-estero,Coconut Point Mall,Estero,Lee,anchor-dependent,1,6.7,7.7,,34.24,2026-Q1
+summerlin-rd-fort-myers-fort-myers,Summerlin Rd Fort Myers,Fort Myers,Lee,medical-anchored,0.4,8.3,7.2,8500,32.73,2026-Q1
+immokalee-rd-north-naples-naples,Immokalee Rd North Naples,Naples,Collier,highway-strip-mall,0.3,6.7,3.3,15000,30.91,2026-Q1
+vanderbilt-beach-rd-mercato-naples,Vanderbilt Beach Rd / Mercato,Naples,Collier,beachfront-tourism,0.45,6.7,3.3,8500,30.91,2026-Q1
+naples-airport-pulling-north-naples,Naples Airport-Pulling (North),Naples,Collier,industrial-flex,1,6.7,3.3,,30.91,2026-Q1
+three-oaks-pkwy-coconut-rd-estero-bonita-boundary-estero,Three Oaks Pkwy / Coconut Rd (Estero/Bonita boundary),Estero,Lee,highway-strip-mall,0.35,6.7,5,7500,30.88,2026-Q1
+bonita-beach-rd-us-41-to-sanibel-causeway-bonita-springs,Bonita Beach Rd (US-41 to Sanibel Causeway),Bonita Springs,Lee,beachfront-tourism,0.5,6.7,2.3,18000,27.51,2026-Q1
+us-41-bonita-springs-bonita-springs,US-41 Bonita Springs,Bonita Springs,Lee,highway-strip-mall,0.45,6.7,2.3,12500,27.51,2026-Q1
+collier-blvd-cr-951-naples,Collier Blvd / CR-951,Naples,Collier,highway-strip-mall,0.45,6.7,3.3,8500,26.79,2026-Q1
+davis-blvd-east-naples-naples,Davis Blvd East Naples,Naples,Collier,highway-strip-mall,0.3,6.7,3.3,9500,26.79,2026-Q1
+estero-blvd-fort-myers-beach-fort-myers-beach,Estero Blvd Fort Myers Beach,Fort Myers Beach,Lee,beachfront-tourism,0.85,6.7,2.9,-13220,26.13,2026-Q1
+six-mile-cypress-pkwy-fort-myers,Six Mile Cypress Pkwy,Fort Myers,Lee,medical-anchored,0.1,8.3,4,14000,26.03,2026-Q1
+veterans-pkwy-colonial-blvd-midpoint-bridge-corridor-fort-myers,Veterans Pkwy / Colonial Blvd (Midpoint Bridge Corridor),Fort Myers,Lee,highway-strip-mall,0.3,6.7,3.2,-5500,23.27,2026-Q1
+colonial-blvd-east-us-41-to-i-75-fort-myers,Colonial Blvd East (US-41 to I-75),Fort Myers,Lee,highway-strip-mall,0.2,6.7,3.2,5500,23.27,2026-Q1
+daniels-pkwy-i-75-to-ben-hill-griffin-fort-myers,Daniels Pkwy (I-75 to Ben Hill Griffin),Fort Myers,Lee,anchor-dependent,0.25,6.7,3.2,4200,23.27,2026-Q1
+cape-coral-pkwy-e-cape-coral,Cape Coral Pkwy E,Cape Coral,Lee,suburban-residential,0.2,6.7,2.5,3500,23.09,2026-Q1
+pine-island-rd-cape-coral-cape-coral,Pine Island Rd Cape Coral,Cape Coral,Lee,suburban-residential,0.2,6.7,2.5,6200,23.09,2026-Q1
+cape-coral-coral-pointe-cape-coral,Cape Coral – Coral Pointe,Cape Coral,Lee,,0.15,6.7,2.5,4500,23.09,2026-Q1
+us-41-cleveland-ave-fort-myers-fort-myers,US-41 / Cleveland Ave Fort Myers,Fort Myers,Lee,mixed-use-downtown,0.15,6.7,2.9,-8679,16.04,2026-Q1
+TOTAL,TOTAL (26 corridors),,,,,6.88,3.60,132137,32.98,

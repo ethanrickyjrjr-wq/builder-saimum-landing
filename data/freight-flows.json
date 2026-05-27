@@ -1,0 +1,39 @@
+{
+  "source": "FAF5.7.1 freight flows (ORNL/FHWA Cold Lane Parquet; year 2024; dms_dest=129 trade_type=1) — https://faf.ornl.gov/faf5/",
+  "brain": "logistics-swfl",
+  "api": "https://www.swfldatagulf.com/api/b/logistics-swfl?view=speak&tier=3",
+  "fetched_at": "2026-05-25",
+  "freshness_token": "SWFL-7421-v13-20260520",
+  "scope": "Inbound domestic freight flows landing in the SWFL FAF zone (129 — Remainder of Florida) for the latest historical FAF5 year (2024). 12 origin × commodity flow rows aggregated from 7 distinct origin zones and 7 SCTG commodity classes. Imports and exports intentionally excluded.",
+  "totals": {
+    "year": 2024,
+    "total_inbound_tons_thousands": 12853.1,
+    "total_inbound_value_usd_millions": 11639.4,
+    "origin_zone_count": 7,
+    "commodity_class_count": 7,
+    "flow_row_count": 12
+  },
+  "top_origins": [
+    { "rank": 1, "origin_zone_name": "Tampa-St. Petersburg", "faf_zone_code": 123, "state": "FL", "tons_thousands": 4411.1, "value_usd_millions": 1021.6, "share_of_tons_pct": 34.3 },
+    { "rank": 2, "origin_zone_name": "Orlando",              "faf_zone_code": 124, "state": "FL", "tons_thousands": 2768.6, "value_usd_millions": 3783.7, "share_of_tons_pct": 21.5 },
+    { "rank": 3, "origin_zone_name": "Miami",                "faf_zone_code": 121, "state": "FL", "tons_thousands": 2221.0, "value_usd_millions": 3876.7, "share_of_tons_pct": 17.3 },
+    { "rank": 4, "origin_zone_name": "Other (4 zones)",      "faf_zone_code": null, "state": null, "tons_thousands": 3452.4, "value_usd_millions": 2957.4, "share_of_tons_pct": 26.9 }
+  ],
+  "top_commodities": [
+    { "rank": 1, "sctg_code": 12, "commodity_name": "SCTG 12 — Gravel, crushed stone", "tons_thousands": 4704.3, "value_usd_millions": 310.1,  "share_of_tons_pct": 36.6 },
+    { "rank": 2, "sctg_code": 7,  "commodity_name": "SCTG 7 — Other prepared foodstuffs", "tons_thousands": 2747.0, "value_usd_millions": 8359.2, "share_of_tons_pct": 21.4 },
+    { "rank": 3, "sctg_code": 17, "commodity_name": "SCTG 17 — Gasoline, fuels",       "tons_thousands": 2305.4, "value_usd_millions": 1391.3, "share_of_tons_pct": 17.9 },
+    { "rank": 4, "sctg_code": null, "commodity_name": "Other (4 classes)",             "tons_thousands": 3096.4, "value_usd_millions": 1578.8, "share_of_tons_pct": 24.1 }
+  ],
+  "sankey_flows": [
+    { "source": "Tampa-St. Petersburg", "target": "SWFL (FAF zone 129)", "tons_thousands": 4411.1 },
+    { "source": "Orlando",              "target": "SWFL (FAF zone 129)", "tons_thousands": 2768.6 },
+    { "source": "Miami",                "target": "SWFL (FAF zone 129)", "tons_thousands": 2221.0 },
+    { "source": "Other (4 zones)",      "target": "SWFL (FAF zone 129)", "tons_thousands": 3452.4 },
+    { "source": "SWFL (FAF zone 129)",  "target": "SCTG 12 — Gravel, crushed stone",     "tons_thousands": 4704.3 },
+    { "source": "SWFL (FAF zone 129)",  "target": "SCTG 7 — Other prepared foodstuffs",  "tons_thousands": 2747.0 },
+    { "source": "SWFL (FAF zone 129)",  "target": "SCTG 17 — Gasoline, fuels",           "tons_thousands": 2305.4 },
+    { "source": "SWFL (FAF zone 129)",  "target": "Other (4 classes)",                   "tons_thousands": 3096.4 }
+  ],
+  "_sankey_flow_note": "sankey_flows uses SWFL as the central hub node so all numbers tie back to published aggregates. Per-flow origin × commodity tonnage at the row level requires reading the FAF5 Parquet directly (data_lake._tier1_inventory) — not currently exposed via the brain API. If you need a true bipartite Sankey (origin → commodity), tell me and I'll wire a FAF5 Parquet read for the cross-product."
+}

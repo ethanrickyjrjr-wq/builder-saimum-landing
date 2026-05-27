@@ -1,0 +1,10 @@
+type,rank,name,faf_zone_code,sctg_code,state,tons_thousands,value_usd_millions,share_of_tons_pct
+origin,1,Tampa-St. Petersburg,123,,FL,4411.1,1021.6,34.3
+origin,2,Orlando,124,,FL,2768.6,3783.7,21.5
+origin,3,Miami,121,,FL,2221.0,3876.7,17.3
+origin,4,Other (4 zones),,,,3452.4,2957.4,26.9
+commodity,1,"SCTG 12 — Gravel, crushed stone",,12,,4704.3,310.1,36.6
+commodity,2,SCTG 7 — Other prepared foodstuffs,,7,,2747.0,8359.2,21.4
+commodity,3,"SCTG 17 — Gasoline, fuels",,17,,2305.4,1391.3,17.9
+commodity,4,Other (4 classes),,,,3096.4,1578.8,24.1
+TOTAL,,SWFL inbound year 2024,,,,12853.1,11639.4,100.0
